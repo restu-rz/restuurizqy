@@ -1,0 +1,461 @@
+:root {
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --bg-card-glass: rgba(30, 41, 59, 0.7);
+  --text-white: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-blue: #3b82f6;
+  --accent-blue-hover: #2563eb;
+  --accent-green: #22c55e;
+  --border-dark: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Navigasi Atas */
+header {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-dark);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+.brand-sub {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--text-white);
+}
+
+.nav-cta {
+  border: 1px solid var(--border-dark);
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  color: var(--text-white);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.nav-cta:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--text-white);
+}
+
+/* Container Utama */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Split Hero Section */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 3rem;
+  align-items: center;
+  min-height: 85vh;
+  padding: 3rem 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.dot-orange {
+  width: 8px;
+  height: 8px;
+  background-color: #f97316;
+  border-radius: 50%;
+}
+
+.dot-green {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-green);
+  border-radius: 50%;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.hero-title span {
+  color: #60a5fa;
+  display: block;
+}
+
+.hero-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+.hero-desc strong {
+  color: var(--text-white);
+}
+
+/* Tombol Aksi */
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background: var(--accent-blue);
+  color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--accent-blue-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid var(--border-dark);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-white);
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.btn-outline:hover {
+  border-color: var(--text-white);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.social-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.pill-btn {
+  border: 1px solid var(--border-dark);
+  background: var(--bg-card-glass);
+  color: var(--text-white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.pill-btn:hover {
+  border-color: #60a5fa;
+  transform: translateY(-2px);
+}
+
+/* Sisi Kanan: Visual Showcase Card */
+.visual-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.9));
+  border: 1px solid var(--border-dark);
+  border-radius: 24px;
+  padding: 1.75rem;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.visual-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.visual-tag-top {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.visual-coords {
+  text-align: right;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+.bg-watermark {
+  position: absolute;
+  right: -10px;
+  top: 22%;
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 0.9;
+  color: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+  text-align: right;
+  user-select: none;
+}
+
+/* Preview Peta Miring di Tengah */
+.map-frame {
+  position: relative;
+  width: 78%;
+  height: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  transform: rotate(-3deg);
+  margin: 1.5rem 0;
+  background: #1e293b;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.map-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Foto Profil di Pojok Kanan Bawah Kartu */
+.profile-cutout {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 210px;
+  height: 260px;
+  object-fit: cover;
+  object-position: top;
+  z-index: 3;
+  border-top-left-radius: 20px;
+}
+
+/* Kartu Putih Metrik Akurasi */
+.metric-card {
+  position: relative;
+  z-index: 4;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 1.1rem 1.4rem;
+  border-radius: 16px;
+  width: fit-content;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+.metric-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.metric-value {
+  font-size: 2.25rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #0f172a;
+}
+
+.metric-value span {
+  font-size: 1.1rem;
+  color: var(--accent-blue);
+}
+
+.metric-sub {
+  font-size: 0.75rem;
+  color: #475569;
+  margin-top: 0.2rem;
+}
+
+/* Floating Pills di dalam Visual Card */
+.float-pill {
+  position: absolute;
+  z-index: 4;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-dark);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Section Bawah */
+section {
+  padding: 4.5rem 0;
+  border-top: 1px solid var(--border-dark);
+}
+
+h2 {
+  font-size: 1.85rem;
+  margin-bottom: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dark);
+  border-radius: 16px;
+  padding: 1.6rem;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #60a5fa;
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+  color: var(--text-white);
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 1.1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.06);
+  color: #cbd5e1;
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dark);
+  padding: 0.6rem 1.15rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2.5rem 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border-dark);
+}
+
+/* Responsif Layar HP */
+@media (max-width: 900px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+  }
+  .hero-title {
+    font-size: 2.75rem;
+  }
+  .nav-links {
+    display: none;
+  }
+}
